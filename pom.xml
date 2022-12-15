@@ -4,8 +4,30 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 http://maven.apache.org/xsd/maven-4.0.0.xsd">  
   
   <modelVersion>4.0.0</modelVersion>  
-  <groupId>com.javatpoint.application1</groupId>  
+  <groupId>application1</groupId>  
   <artifactId>my-app</artifactId>  
-  <version>1</version>  
-  
+  <version>1</version> 
+
+<!-- https://mvnrepository.com/artifact/org.sonarsource.scanner.maven/sonar-maven-plugin -->
+<dependency>
+<groupId>org.sonarsource.scanner.maven</groupId>
+<artifactId>sonar-maven-plugin</artifactId>
+<version>3.2</version>
+</dependency>
+
+Followed by the profile
+
+<profiles>
+<profile>
+<id>sonar</id>
+<activation>
+<activeByDefault>true</activeByDefault>
+</activation>
+<properties>
+<sonar.host.url>
+http://3.110.204.93:9000
+</sonar.host.url>
+</properties>
+</profile>
+</profiles>  
 </project>
